@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B6FB8">
+  <meta name="description"
+    content="Sistem Surveilans Kasus Campak Kabupaten Pekalongan — Dashboard pemantauan epidemiologi berdasarkan orang, waktu, dan tempat periode 2026.">
+  <title>Sistem Surveilans Kasus Campak — Kab. Pekalongan</title>
+
+  <!-- Google Fonts: Public Sans -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&display=swap">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ===================== 1. IDENTITAS HEADER (PALING ATAS) ===================== -->
+  <header class="identity-header" id="identity-header">
+    <div class="identity-inner">
+      <div class="identity-logos">
+        <div class="logo-box" title="Universitas Pekalongan">
+          <img src="assets/logo/unikal.png" alt="Logo Unikal"
+            onerror="this.onerror=null;this.parentElement.innerHTML='<span class=\'logo-placeholder\'>Logo Unikal</span>';">
+        </div>
+        <div class="logo-box" title="Fakultas Ilmu Kesehatan">
+          <img src="assets/logo/fakultas.png" alt="Logo Fakultas"
+            onerror="this.onerror=null;this.parentElement.innerHTML='<span class=\'logo-placeholder\'>Logo Fakultas</span>';">
+        </div>
+        <div class="logo-box" title="Dinas Kesehatan Kab. Pekalongan">
+          <img src="assets/logo/dinas.png" alt="Logo Dinas"
+            onerror="this.onerror=null;this.parentElement.innerHTML='<span class=\'logo-placeholder\'>Logo Dinas</span>';">
+        </div>
+      </div>
+      <div class="identity-text">
+        <h2 id="top-univ" class="id-univ">Universitas Pekalongan</h2>
+        <p class="id-sub"><span id="top-fakultas">Fakultas Ilmu Kesehatan</span> &bull; <span id="top-prodi">Program
+            Studi Kesehatan Masyarakat</span></p>
+        <p class="id-mhs">Peneliti/Mahasiswa: <strong id="top-mhs">Eva Risqiyanti</strong> <span
+            id="top-nim">0623015731</span> | Dosen Pembimbing: <strong id="top-dosen">Jaya Maulana, S.KM.,
+            M.Kes</strong></p>
+        <p class="id-dinas">Instansi Mitra / Lokasi Studi: <strong id="top-dinas">Dinas Kesehatan Kab.
+            Pekalongan</strong></p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== STATUS BAR LIVE / CONTOH ===================== -->
+  <div class="data-status-bar" id="data-status-bar"></div>
+
+  <!-- ===================== NAVIGASI ===================== -->
+  <nav class="nav-wrapper" aria-label="Navigasi utama">
+    <div class="nav-inner">
+      <div class="nav-brand">📊 <span>Surveilans</span> Campak</div>
+      <div class="nav-pills" role="tablist">
+        <a class="nav-pill active" href="#beranda" role="tab">Beranda</a>
+        <a class="nav-pill" href="#data-orang" role="tab">Data Orang</a>
+        <a class="nav-pill" href="#data-waktu" role="tab">Data Waktu</a>
+        <a class="nav-pill" href="#data-tempat" role="tab">Data Tempat</a>
+        <a class="nav-pill" href="#peta" role="tab">Peta</a>
+        <a class="nav-pill" href="#analisis" role="tab">Analisis</a>
+        <a class="nav-pill" href="#korelasi" role="tab">Korelasi</a>
+        <a class="nav-pill" href="#imunisasi" role="tab">Imunisasi</a>
+        <a class="nav-pill" href="#laporan" role="tab">Laporan</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== 1. BERANDA ===================== -->
+  <section id="beranda" data-section class="hero">
+    <div class="hero-label" id="hero-badge">⚠️ Data Contoh — Bukan Data Asli</div>
+    <h1>Sistem Surveilans Kasus <span>Campak</span><br>Kabupaten Pekalongan</h1>
+    <p class="hero-desc">
+      Dashboard pemantauan persebaran kasus campak berdasarkan karakteristik
+      <strong>orang</strong>, <strong>waktu</strong>, dan <strong>tempat</strong>
+      periode 2026, bersumber dari data kasus Dinas Kesehatan Kabupaten Pekalongan.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#data-orang" class="btn btn-primary">📊 Lihat Dashboard</a>
+      <a href="#peta" class="btn btn-outline">🗺️ Lihat Peta Kasus</a>
+      <a href="#korelasi" class="btn btn-outline">📈 Uji Korelasi</a>
+      <a href="#laporan" class="btn btn-primary">📑 Laporan & Ekspor</a>
+    </div>
+
+    <!-- Kartu Ringkasan -->
+    <div class="summary-cards fade-in">
+      <div class="summary-card">
+        <div class="card-icon">📋</div>
+        <div class="card-value" id="total-kasus">–</div>
+        <div class="card-label">Total Kasus <span class="sample-badge" id="badge-total-sample">Data contoh</span></div>
+      </div>
+      <div class="summary-card">
+        <div class="card-icon">✅</div>
+        <div class="card-value" id="total-confirmed">–</div>
+        <div class="card-label">Confirmed</div>
+      </div>
+      <div class="summary-card">
+        <div class="card-icon">🏘️</div>
+        <div class="card-value" id="total-kecamatan">–</div>
+        <div class="card-label">Wilayah Terdampak</div>
+      </div>
+      <div class="summary-card">
+        <div class="card-icon">📅</div>
+        <div class="card-value" style="font-size:1.3rem;">2026</div>
+        <div class="card-label">Periode</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. DATA ORANG ===================== -->
+  <section id="data-orang" data-section class="section-alt">
+    <div class="section" style="padding-top:0;padding-bottom:0;">
+      <h2 class="section-title fade-in">
+        <span class="icon">👤</span> Data Orang
+        <span class="sample-badge" id="badge-orang-sample">Data contoh</span>
+      </h2>
+      <p class="section-subtitle fade-in">Distribusi kasus campak berdasarkan karakteristik individu (kelompok umur,
+        jenis kelamin, status imunisasi, dan status kasus).</p>
+
+      <div class="chart-grid">
+        <!-- Umur -->
+        <div class="chart-card fade-in">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">Kasus per Kelompok Umur</div>
+            <button class="btn-download-chart" data-canvas="chart-umur" title="Unduh Grafik PNG">📷 Unduh PNG</button>
+          </div>
+          <div class="chart-container" id="container-chart-umur">
+            <canvas id="chart-umur"></canvas>
+          </div>
+        </div>
+
+        <!-- Jenis Kelamin -->
+        <div class="chart-card fade-in">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">Kasus per Jenis Kelamin</div>
+            <button class="btn-download-chart" data-canvas="chart-jk" title="Unduh Grafik PNG">📷 Unduh PNG</button>
+          </div>
+          <div class="chart-container" id="container-chart-jk">
+            <canvas id="chart-jk"></canvas>
+          </div>
+        </div>
+
+        <!-- Status Imunisasi -->
+        <div class="chart-card fade-in">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">Kasus per Status Imunisasi</div>
+            <button class="btn-download-chart" data-canvas="chart-imunisasi-orang" title="Unduh Grafik PNG">📷 Unduh
+              PNG</button>
+          </div>
+          <div class="chart-container" id="container-chart-imunisasi-orang">
+            <canvas id="chart-imunisasi-orang"></canvas>
+          </div>
+        </div>
+
+        <!-- Status Kasus -->
+        <div class="chart-card fade-in">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">Kasus per Status Kasus</div>
+            <button class="btn-download-chart" data-canvas="chart-status" title="Unduh Grafik PNG">📷 Unduh PNG</button>
+          </div>
+          <div class="chart-container" id="container-chart-status">
+            <canvas id="chart-status"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card fade-in">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">Kasus menurut Pemberian Vitamin A</div>
+            <button class="btn-download-chart" data-canvas="chart-vita" title="Unduh Grafik PNG">📷 Unduh PNG</button>
+          </div>
+          <div class="chart-container" id="container-chart-vita">
+            <canvas id="chart-vita"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card fade-in">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">Riwayat Bepergian 1 Bulan Terakhir</div>
+            <button class="btn-download-chart" data-canvas="chart-bepergian" title="Unduh Grafik PNG">📷 Unduh
+              PNG</button>
+          </div>
+          <div class="chart-container" id="container-chart-bepergian">
+            <canvas id="chart-bepergian"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card fade-in">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">Kasus dengan Komplikasi</div>
+            <button class="btn-download-chart" data-canvas="chart-komplikasi" title="Unduh Grafik PNG">📷 Unduh
+              PNG</button>
+          </div>
+          <div class="chart-container" id="container-chart-komplikasi">
+            <canvas id="chart-komplikasi"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card fade-in">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">Jenis Komplikasi yang Dilaporkan</div>
+            <button class="btn-download-chart" data-canvas="chart-komplikasi-jenis" title="Unduh Grafik PNG">📷 Unduh
+              PNG</button>
+          </div>
+          <div class="chart-container" id="container-chart-komplikasi-jenis">
+            <canvas id="chart-komplikasi-jenis"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. DATA WAKTU ===================== -->
+  <section id="data-waktu" data-section>
+    <div class="section">
+      <h2 class="section-title fade-in">
+        <span class="icon">📅</span> Data Waktu
+        <span class="sample-badge" id="badge-waktu-sample">Data contoh</span>
+      </h2>
+      <p class="section-subtitle fade-in">Tren kasus campak berdasarkan bulan dan minggu epidemiologi.</p>
+      <div id="note-tidak-ada-tanggal" class="note-box fade-in" style="display:none;">
+        <strong>ℹ️ Tren waktu belum dapat ditampilkan.</strong> Data kasus dari Dinkes belum memuat kolom
+        <em>tanggal onset / tanggal sakit</em> (kolom &quot;Tahun&quot; dan &quot;Bulan&quot; pada data berisi
+        <strong>umur</strong> kasus, bukan waktu kejadian).
+        Grafik di bawah akan terisi otomatis begitu kolom tanggal ditambahkan pada spreadsheet.
+      </div>
+
+      <!-- Filter tahun -->
+      <div class="filter-bar fade-in">
+        <button class="filter-btn filter-tahun active" data-tahun="semua">Semua</button>
+        <button class="filter-btn filter-tahun" data-tahun="2026">2026</button>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card chart-card-full fade-in">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">Tren Kasus per Bulan</div>
+            <button class="btn-download-chart" data-canvas="chart-bulanan" title="Unduh Grafik PNG">📷 Unduh
+              PNG</button>
+          </div>
+          <div class="chart-container" style="min-height:280px;">
+            <canvas id="chart-bulanan"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card chart-card-full fade-in">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">Kasus per Minggu Epidemiologi</div>
+            <button class="btn-download-chart" data-canvas="chart-mingguan" title="Unduh Grafik PNG">📷 Unduh
+              PNG</button>
+          </div>
+          <div class="chart-container" style="min-height:280px;">
+            <canvas id="chart-mingguan"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. DATA TEMPAT ===================== -->
+  <section id="data-tempat" data-section class="section-alt">
+    <div class="section" style="padding-top:0;padding-bottom:0;">
+      <h2 class="section-title fade-in">
+        <span class="icon">📍</span> Data Tempat
+        <span class="sample-badge" id="badge-tempat-sample">Data contoh</span>
+      </h2>
+      <p class="section-subtitle fade-in">Distribusi kasus per kecamatan di Kabupaten Pekalongan, diurutkan dari
+        terbanyak.</p>
+
+      <div class="chart-grid">
+        <div class="chart-card chart-card-full fade-in">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">Kasus per Kecamatan</div>
+            <button class="btn-download-chart" data-canvas="chart-kecamatan" title="Unduh Grafik PNG">📷 Unduh
+              PNG</button>
+          </div>
+          <div class="chart-container" style="min-height:420px;">
+            <canvas id="chart-kecamatan"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-3 fade-in">
+        <div class="table-toolbar-flex">
+          <div class="chart-card-title">Tabel Kasus per Kecamatan</div>
+          <div class="report-export-buttons">
+            <div class="checkbox-small-wrapper">
+              <label class="custom-checkbox-label">
+                <input type="checkbox" id="check-mask-kecamatan">
+                <span>Sembunyikan (&lt;5)</span>
+              </label>
+            </div>
+            <button id="btn-export-kec-tabel-csv" class="btn btn-outline btn-sm">📥 Unduh CSV</button>
+            <button id="btn-export-kec-tabel-excel" class="btn btn-primary btn-sm">📊 Unduh Excel</button>
+          </div>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table" aria-label="Tabel kasus campak per kecamatan">
+            <thead>
+              <tr>
+                <th style="width:60px;">No</th>
+                <th>Kecamatan</th>
+                <th>Jumlah Kasus</th>
+                <th>Persentase</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="tabel-kecamatan-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. PETA ===================== -->
+  <section id="peta" data-section>
+    <div class="section">
+      <h2 class="section-title fade-in">
+        <span class="icon">🗺️</span> Peta Persebaran Kasus
+        <span class="sample-badge" id="badge-peta-sample">Data contoh</span>
+      </h2>
+      <p class="section-subtitle fade-in">Peta interaktif surveilans kasus campak. Klik titik atau poligon kecamatan
+        untuk membuka detail wilayah di tab baru.</p>
+
+      <!-- Toolbar Layer Peta & Unduh Gambar Peta -->
+      <div class="map-toolbar fade-in">
+        <div class="map-layer-selector">
+          <span style="font-size:0.8rem;font-weight:700;color:var(--biru-tua);">Lapisan Peta:</span>
+          <button class="layer-btn active" data-layer="titik">📍 Titik Kasus</button>
+        </div>
+        <div>
+          <button id="btn-unduh-peta" class="btn btn-outline btn-sm">📷 Unduh peta (PNG)</button>
+        </div>
+      </div>
+
+      <!-- Wadah Peta Leaflet -->
+      <div class="map-wrapper fade-in">
+        <div id="peta-kasus" role="img" aria-label="Peta persebaran kasus campak di Kabupaten Pekalongan"></div>
+      </div>
+
+      <!-- Pesan Ramah jika GeoJSON / Penduduk belum ada -->
+      <div id="map-notice-box" style="display:none;margin-top:10px;" class="academic-note-box"></div>
+
+      <!-- Kartu Global Moran's I Spasial -->
+      <div id="moran-card-box" class="moran-card fade-in" style="display:none;">
+        <div class="moran-header">
+          <div class="moran-title">🌐 Uji Autokorelasi Spasial (Global Moran's I)</div>
+          <div class="moran-badge" id="moran-badge-val">Indeks I: –</div>
+        </div>
+        <p class="moran-desc" id="moran-desc-val">Menghitung autokorelasi spasial berbasis kedekatan wilayah...</p>
+      </div>
+
+      <!-- Kartu Info Surveilans: Orang, Waktu, Tempat -->
+      <div class="info-cards fade-in">
+        <div class="info-card">
+          <div class="info-icon">👤</div>
+          <h3>Orang</h3>
+          <div class="info-value" id="info-orang-val">–</div>
+          <p id="info-orang-desc">Kelompok umur dominan</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📅</div>
+          <h3>Waktu</h3>
+          <div class="info-value" id="info-waktu-val">–</div>
+          <p id="info-waktu-desc">Bulan puncak kasus</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <h3>Tempat</h3>
+          <div class="info-value" id="info-tempat-val">–</div>
+          <p id="info-tempat-desc">Kecamatan kasus tertinggi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. ANALISIS DESKRIPTIF ===================== -->
+  <section id="analisis" data-section class="section-alt">
+    <div class="section" style="padding-top:0;padding-bottom:0;">
+      <h2 class="section-title fade-in">
+        <span class="icon">📊</span> Analisis
+        <span class="sample-badge">Deskriptif</span>
+      </h2>
+      <p class="section-subtitle fade-in">Ringkasan otomatis parameter epidemiologi utama berdasarkan data saat ini.</p>
+
+      <div class="analysis-grid">
+        <div class="analysis-card fade-in">
+          <div class="analysis-icon">🏘️</div>
+          <h3>Kecamatan Tertinggi</h3>
+          <div class="analysis-value" id="analisis-kecamatan">–</div>
+          <p id="analisis-kecamatan-val">–</p>
+        </div>
+        <div class="analysis-card fade-in">
+          <div class="analysis-icon">📅</div>
+          <h3>Bulan Puncak</h3>
+          <div class="analysis-value" id="analisis-bulan">–</div>
+          <p id="analisis-bulan-val">–</p>
+        </div>
+        <div class="analysis-card fade-in">
+          <div class="analysis-icon">👶</div>
+          <h3>Kelompok Umur Terbanyak</h3>
+          <div class="analysis-value" id="analisis-umur">–</div>
+          <p id="analisis-umur-val">–</p>
+        </div>
+        <div class="analysis-card fade-in">
+          <div class="analysis-icon">💉</div>
+          <h3>Belum/Tidak Lengkap Imunisasi</h3>
+          <div class="analysis-value" id="analisis-imun">–</div>
+          <p id="analisis-imun-val">–</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7. MENU BARU: KORELASI STATISTIK ===================== -->
+  <section id="korelasi" data-section>
+    <div class="section">
+      <h2 class="section-title fade-in">
+        <span class="icon">📈</span> Korelasi & Analisis Inferensial
+        <span class="sample-badge">Uji Statistik Otomatis</span>
+      </h2>
+      <p class="section-subtitle fade-in">
+        Analisis hubungan antar variabel kasus campak. Sistem memilih uji secara otomatis (Pearson, Spearman,
+        Chi-Square, Fisher 2x2, Odds Ratio) disertai interpretasi dalam bahasa Indonesia.
+      </p>
+
+      <!-- Kartu Kontrol Pemilih Variabel & Preset Bawaan -->
+      <div class="stats-controls-card fade-in">
+        <div class="stats-preset-bar">
+          <div class="preset-title">💡 Contoh Pasangan Bawaan (Klik Cepat):</div>
+          <div class="preset-buttons">
+            <button class="btn-preset active" data-v1="umur" data-v2="status_imunisasi">Umur vs Status
+              Imunisasi</button>
+            <button class="btn-preset" data-v1="status_imunisasi" data-v2="status_kasus">Imunisasi vs Status Kasus
+              (2x2)</button>
+            <button class="btn-preset" data-v1="jenis_kelamin" data-v2="status_kasus">Jenis Kelamin vs Status
+              Kasus</button>
+            <button class="btn-preset" data-v1="kecamatan" data-v2="status_kasus">Kecamatan vs Status Kasus</button>
+          </div>
+        </div>
+
+        <div class="var-select-grid mt-2">
+          <div class="form-group">
+            <label for="select-var-1">Variabel 1 (X):</label>
+            <select id="select-var-1" class="form-select">
+              <option value="umur">Umur (Numerik)</option>
+              <option value="kelompok_umur">Kelompok Umur (Kategorik)</option>
+              <option value="jenis_kelamin">Jenis Kelamin (Kategorik)</option>
+              <option value="status_imunisasi" selected>Status Imunisasi (Kategorik)</option>
+              <option value="status_kasus">Status Kasus (Kategorik)</option>
+              <option value="kecamatan">Kecamatan (Kategorik)</option>
+              <option value="mcv1">MCV1 / 9 bln (Kategorik)</option>
+              <option value="mcv2">MCV2 / 18 bln (Kategorik)</option>
+              <option value="bias">Campak BIAS kelas 1 SD (Kategorik)</option>
+              <option value="vit_a">Vitamin A (Kategorik)</option>
+              <option value="gejala_batuk">Gejala Batuk (Kategorik)</option>
+              <option value="gejala_pilek">Gejala Pilek (Kategorik)</option>
+              <option value="gejala_mata_merah">Gejala Mata Merah (Kategorik)</option>
+              <option value="komplikasi">Ada Komplikasi (Kategorik)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="select-var-2">Variabel 2 (Y):</label>
+            <select id="select-var-2" class="form-select">
+              <option value="umur" selected>Umur (Numerik)</option>
+              <option value="kelompok_umur">Kelompok Umur (Kategorik)</option>
+              <option value="jenis_kelamin">Jenis Kelamin (Kategorik)</option>
+              <option value="status_imunisasi">Status Imunisasi (Kategorik)</option>
+              <option value="status_kasus">Status Kasus (Kategorik)</option>
+              <option value="kecamatan">Kecamatan (Kategorik)</option>
+              <option value="mcv1">MCV1 / 9 bln (Kategorik)</option>
+              <option value="mcv2">MCV2 / 18 bln (Kategorik)</option>
+              <option value="bias">Campak BIAS kelas 1 SD (Kategorik)</option>
+              <option value="vit_a">Vitamin A (Kategorik)</option>
+              <option value="gejala_batuk">Gejala Batuk (Kategorik)</option>
+              <option value="gejala_pilek">Gejala Pilek (Kategorik)</option>
+              <option value="gejala_mata_merah">Gejala Mata Merah (Kategorik)</option>
+              <option value="komplikasi">Ada Komplikasi (Kategorik)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <button id="btn-hitung-korelasi" class="btn btn-primary" style="width:100%;">⚡ Jalankan Analisis</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hasil Analisis Korelasi -->
+      <div id="korelasi-result-area" class="stats-result-container fade-in">
+        <!-- Kartu Metrik & Tabel Silang / Scatter Plot -->
+        <div class="stats-metric-card" id="card-hasil-uji">
+          <div class="chart-card-header-flex">
+            <h3 id="judul-uji-statistik" style="font-size:1.05rem;color:var(--biru-tua);font-weight:700;">Hasil Uji
+              Hubungan</h3>
+            <span id="badge-metode-uji" class="sample-badge">Uji Terpilih</span>
+          </div>
+
+          <!-- Wadah Chips Metrik -->
+          <div id="chips-metrik" class="metric-grid-chips"></div>
+
+          <!-- Wadah Tabel Silang Kontingensi atau Visualisasi -->
+          <div id="wadah-visual-korelasi" class="mt-2"></div>
+
+          <!-- Wadah Kalimat Interpretasi Otomatis -->
+          <div id="wadah-interpretasi" class="interpretation-box"></div>
+        </div>
+
+        <!-- Kartu Visualisasi Grafik Korelasi -->
+        <div class="stats-metric-card" id="card-grafik-korelasi">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title" id="judul-grafik-korelasi">Visualisasi Korelasi</div>
+            <button class="btn-download-chart" data-canvas="chart-korelasi-canvas" title="Unduh Gambar PNG">📷 Unduh
+              PNG</button>
+          </div>
+          <div class="chart-container" style="min-height:280px;">
+            <canvas id="chart-korelasi-canvas"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Catatan Skripsi / Rujukan Akademik -->
+      <div class="academic-note-box fade-in">
+        📌 <strong>Catatan untuk Penulisan Skripsi / Laporan:</strong> Hasil analisis statistik dan korelasi di atas
+        dihitung secara otomatis sebagai alat bantu penapisan awal (screening). Untuk keperluan penulisan hasil
+        penelitian, skripsi, atau naskah publikasi formal, disarankan untuk memverifikasi dan membandingkan luaran nilai
+        uji dengan perangkat lunak statistik standar seperti SPSS atau R.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8. IMUNISASI ===================== -->
+  <section id="imunisasi" data-section class="section-alt">
+    <div class="section" style="padding-top:0;padding-bottom:0;">
+      <h2 class="section-title fade-in">
+        <span class="icon">💉</span> Imunisasi
+        <span class="sample-badge">Data contoh</span>
+      </h2>
+      <p class="section-subtitle fade-in">Perbandingan kasus berdasarkan status imunisasi dan kelompok umur.</p>
+
+      <div class="chart-grid">
+        <div class="chart-card fade-in">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">Status Imunisasi per Kelompok Umur</div>
+            <button class="btn-download-chart" data-canvas="chart-imun-umur" title="Unduh Grafik PNG">📷 Unduh
+              PNG</button>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-imun-umur"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card fade-in">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">Status Imunisasi per Status Kasus</div>
+            <button class="btn-download-chart" data-canvas="chart-imun-kasus" title="Unduh Grafik PNG">📷 Unduh
+              PNG</button>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-imun-kasus"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 9. MENU BARU: LAPORAN & DATA PRIVASI ===================== -->
+  <section id="laporan" data-section>
+    <div class="section">
+      <h2 class="section-title fade-in">
+        <span class="icon">📑</span> Laporan & Ekspor Data
+        <span class="sample-badge">Privasi Terjaga</span>
+      </h2>
+      <p class="section-subtitle fade-in">
+        Tabel data surveilans terlindungi (hanya memuat kolom whitelist tanpa nama dan alamat pasien), fitur pencarian,
+        filter, pembagian halaman, dan tombol unduh format PDF, Excel, dan CSV.
+      </p>
+
+      <!-- Action Card Ekspor PDF Laporan Lengkap -->
+      <div class="report-action-header fade-in">
+        <div>
+          <h3 style="font-size:1.05rem;color:var(--biru-tua);font-weight:700;">📑 Laporan Surveilans Epidemiologi Campak
+          </h3>
+          <p style="font-size:0.82rem;color:var(--teks-isi);opacity:0.85;margin-top:2px;">
+            Ekspor komprehensif memuat identitas akademik, status data, kartu ringkasan, grafik utama, tabel analisis,
+            dan hasil uji korelasi.
+          </p>
+        </div>
+        <div class="report-export-buttons">
+          <button id="btn-export-pdf" class="btn btn-primary">
+            📄 Ekspor Laporan PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabel Data Kasus (Whitelist) -->
+      <div class="chart-card fade-in mt-3">
+        <div class="table-toolbar-flex">
+          <div class="search-input-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="input-cari-kasus" placeholder="Cari kecamatan, desa, status...">
+          </div>
+
+          <div class="report-export-buttons">
+            <div class="checkbox-small-wrapper">
+              <label class="custom-checkbox-label">
+                <input type="checkbox" id="check-mask-laporan">
+                <span>Sembunyikan umur &lt;5</span>
+              </label>
+            </div>
+            <button id="btn-export-laporan-csv" class="btn btn-outline btn-sm">📥 Unduh CSV</button>
+            <button id="btn-export-laporan-excel" class="btn btn-primary btn-sm">📊 Unduh Excel (.xlsx)</button>
+          </div>
+        </div>
+
+        <div class="table-wrapper mt-2">
+          <table class="data-table" id="tabel-kasus-laporan" aria-label="Tabel data kasus surveilans">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="id">No ↕</th>
+                <th class="sortable" data-sort="tanggal_onset">Tgl Onset ↕</th>
+                <th class="sortable" data-sort="umur">Umur ↕</th>
+                <th class="sortable" data-sort="jenis_kelamin">Jenis Kelamin ↕</th>
+                <th class="sortable" data-sort="status_imunisasi">Status Imunisasi ↕</th>
+                <th class="sortable" data-sort="status_kasus">Status Kasus ↕</th>
+                <th class="sortable" data-sort="kecamatan">Kecamatan ↕</th>
+                <th class="sortable" data-sort="desa">Desa ↕</th>
+              </tr>
+            </thead>
+            <tbody id="tabel-laporan-body"></tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-bar">
+          <div id="pagination-info">Menampilkan 0 dari 0 data</div>
+          <div class="pagination-buttons">
+            <button id="btn-page-prev" class="page-btn">◀ Sebelumnya</button>
+            <span id="page-number-display" style="font-weight:700;padding:0 8px;">1</span>
+            <button id="btn-page-next" class="page-btn">Selanjutnya ▶</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daftar Dokumen Laporan Contoh (Placeholder) -->
+      <div class="mt-3 fade-in">
+        <h3 class="chart-card-title mb-2">📁 Dokumen Laporan Berkala (Placeholder)</h3>
+        <div class="doc-grid">
+          <div class="doc-card">
+            <div class="doc-info">
+              <h4>Laporan Surveilans Triwulan I</h4>
+              <p>Periode Januari – Maret 2026. Analisis tren awal kasus campak dan capaian imunisasi MR.</p>
+            </div>
+            <button class="btn btn-outline btn-sm btn-doc-download" data-doc="Laporan_Triwulan_I.pdf">📥 Unduh
+              PDF</button>
+          </div>
+          <div class="doc-card">
+            <div class="doc-info">
+              <h4>Laporan Surveilans Tahunan 2026</h4>
+              <p>Kompilasi tahunan epidemiologi campak di 19 kecamatan Kabupaten Pekalongan.</p>
+            </div>
+            <button class="btn btn-outline btn-sm btn-doc-download" data-doc="Laporan_Tahunan_2026.pdf">📥 Unduh
+              PDF</button>
+          </div>
+          <div class="doc-card">
+            <div class="doc-info">
+              <h4>Pedoman Penyelidikan KLB Campak</h4>
+              <p>Standar Operasional Prosedur (SOP) pelacakan kontak erat dan penanggulangan wabah.</p>
+            </div>
+            <button class="btn btn-outline btn-sm btn-doc-download" data-doc="Pedoman_KLB_Campak.pdf">📥 Unduh
+              PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-identity-summary" id="footer-identity-summary"></div>
+    <p>
+      <strong>Sistem Surveilans Kasus Campak — Kabupaten Pekalongan</strong><br>
+      Periode 2026 &bull; Sumber: Dinkes Kab. Pekalongan &bull; Seluruh data dilindungi sesuai ketentuan privasi medis
+      (tanpa nama dan alamat lengkap
+      pasien).<br>
+      Dikembangkan untuk keperluan pemantauan epidemiologi dan riset skripsi kesehatan masyarakat.
+    </p>
+  </footer>
+
+  <!-- Tombol scroll ke atas -->
+  <button class="scroll-top" id="scroll-top" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
+
+  <!-- ===================== SCRIPTS (DENGAN VERSI TERKUNCI) ===================== -->
+  <!-- PapaParse (Baca & parse CSV) -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <!-- SheetJS (Ekspor Excel XLSX) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <!-- jsPDF & html2canvas (Ekspor Laporan PDF & Peta) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Modul Aplikasi Surveilans -->
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/stats.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

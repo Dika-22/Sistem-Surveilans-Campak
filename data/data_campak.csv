@@ -1,0 +1,270 @@
+Tanggal Kasus,Jenis Kelamin,Tahun,Bulan,Desa,Kecamatan,Gejala Batuk,Gejala Pilek,Gejala Mata Merah,Komplikasi (sebutkan),MCV1 (9 bln),MCV2 (18 bln),Campak BIAS kelas 1 SD,Hasil IgM Campak,Hasil IgM Rubella,Vit A,Bepergian dalam 1 bulan terakhir
+21-01-2026,L,,9,KRASAKAGENG,SRAGI,Ya,Ya,Tidak,"Diare, Malnutrisi, Broncopneumonia",Belum,Belum,Belum,Positif,Negatif,Tidak,Tidak
+21-01-2026,L,1,,BULAK SARI,SRAGI,Ya,Ya,Tidak,,Belum,Belum,Belum,Negatif,Negatif,Tidak,Tidak
+21-01-2026,L,2,,PEGADON,KARANGDADAP,Tidak,Tidak,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Ya,Tidak
+21-01-2026,P,2,5,GEJLIG,KAJEN,Tidak,Tidak,Tidak,,Ya,Ya,Belum,Negatif,Positif,Tidak,Tidak
+21-01-2026,P,2,5,SAMBIROTO,KAJEN,Tidak,Tidak,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Tidak,Tidak
+21-01-2026,L,5,9,BUGANGAN,KEDUNGWUNI,Ya,Tidak,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+21-01-2026,P,3,6,KROMPENG,TALUN,Tidak,Tidak,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+21-01-2026,P,7,11,WERDI,PANINGGARAN,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+21-01-2026,L,9,11,PANINGGARAN,PANINGGARAN,Ya,Ya,Ya,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+21-01-2026,L,59,4,BRONDONG,KESESI,Ya,Ya,Ya,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Ya,Tidak
+21-01-2026,P,8,7,JAGUNG,KESESI,Ya,Ya,Ya,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+21-01-2026,P,1,10,TANGKIL,KEDUNGWUNI,Ya,Ya,Tidak,,Ya,Belum,Belum,Negatif,Negatif,Ya,Ya
+05-02-2026,P,11,,TANJUNG KULON,KAJEN,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Positif,Negatif,Tidak,Ya
+05-02-2026,L,1,3,KLUNJUKAN,SRAGI,Ya,Ya,Tidak,,Ya,Belum,Belum,Negatif,Negatif,Ya,Tidak
+05-02-2026,L,3,0,KARANGGONDANG,KARANGANYAR,Ya,Tidak,Tidak,,Tidak,Tidak,Belum,Positif,Negatif,Ya,Tidak
+03-02-2026,P,10,0,KARANGGONDANG,KARANGANYAR,Ya,Tidak,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+03-03-2026,L,1,3,KESESI,KESESI,Ya,Ya,Tidak,,Ya,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+02-03-2026,L,16,7,KAIBAHAN,KESESI,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-03-2026,P,6,8,SRINAHAN,KESESI,Ya,Ya,Tidak,,Ya,Ya,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+02-03-2026,P,26,0,PONOLAWEN,KESESI,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-03-2026,P,5,0,SIDOSARI,KESESI,Tidak,Tidak,Tidak,,Ya,Ya,Tidak,Negatif,Positif,Tidak,Tidak
+02-03-2026,P,9,3,KALIMADE,KESESI,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-03-2026,P,27,5,SIDOMULYO,KESESI,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Positif,Tidak,Tidak
+02-03-2026,L,1,10,KARANGREJO,KESESI,Tidak,Tidak,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+02-03-2026,L,13,3,PAGUMENGAN MAS,KARANGDADAP,Ya,Ya,Ya,Diare,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+02-03-2026,L,9,3,KEBONROWOPUCANG,KARANGDADAP,Ya,Ya,Ya,Diare,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+02-03-2026,L,9,6,KALILEMBU,KARANGDADAP,Ya,Ya,Ya,,Ya,Ya,Ya,Negatif,Negatif,Ya,Ya
+02-03-2026,L,45,0,KETANDAN,WIRADESA,Tidak,Tidak,Ya,"Diare, Arthralgia",Tidak,Tidak,Tidak,Positif,Negatif,Ya,Ya
+02-03-2026,P,26,0,KULU,KARANGANYAR,Tidak,Tidak,Ya,"Diare, Arthralgia",Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+02-03-2026,P,10,8,PEKAJANGAN,KEDUNGWUNI,Ya,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+02-03-2026,L,3,6,TANGKIL,KEDUNGWUNI,Tidak,Tidak,Tidak,,Tidak,Ya,Belum,Negatif,Negatif,Ya,Tidak
+02-03-2026,P,3,5,TANGKIL,KEDUNGWUNI,Ya,Tidak,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Ya,Tidak
+02-03-2026,L,4,2,KARANGJATI,WIRADESA,Tidak,Tidak,Tidak,,Tidak,Tidak,Belum,Negatif,Negatif,Ya,Tidak
+02-03-2026,P,7,2,RENGAS,KEDUNGWUNI,Ya,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+02-03-2026,P,10,8,RENGAS,KEDUNGWUNI,Tidak,Tidak,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+02-03-2026,L,1,8,KAJEN,KAJEN,Tidak,Tidak,Tidak,,Ya,Ya,Tidak,Positif,Negatif,Ya,Tidak
+02-03-2026,P,39,3,PAGUMENGAN MAS,KARANGDADAP,Tidak,Tidak,Tidak,BRONCHOPNEUMONIA,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+02-03-2026,P,4,3,KALIJAMBE,SRAGI,Tidak,Tidak,Tidak,BRONCHOPNEUMONIA,Ya,Ya,Tidak,Positif,Negatif,Ya,Tidak
+02-03-2026,L,2,11,AMBOKEMBANG,KEDUNGWUNI,Ya,Ya,Ya,BRONCHOPNEUMONIA,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+02-03-2026,L,26,11,KETANDAN,WIRADESA,Tidak,Tidak,Tidak,BRONCHOPNEUMONIA,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+02-03-2026,P,3,5,TANGKIL,KEDUNGWUNI,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+09-03-2026,P,6,2,PACAR,TIRTO,Ya,Ya,Ya,,Tidak,Tidak,Belum,Negatif,Negatif,Ya,Tidak
+09-03-2026,L,2,1,KARANGANYAR,TIRTO,Ya,Ya,Ya,,Tidak,Tidak,Belum,Negatif,Negatif,Ya,Tidak
+09-03-2026,L,6,11,SAMBOREJO,TIRTO,Ya,Ya,Ya,,Tidak,Tidak,Belum,Negatif,Negatif,Ya,Tidak
+09-03-2026,P,2,5,TANGKIL,KEDUNGWUNI,Ya,Tidak,Tidak,,Ya,Tidak,Belum,Negatif,Negatif,Ya,Tidak
+10-03-2026,P,3,11,TANGKIL KULON,KEDUNGWUNI,Ya,Tidak,Tidak,,Tidak,Tidak,Belum,Negatif,Negatif,Ya,Tidak
+10-03-2026,P,1,9,TANGKIL KULON,KEDUNGWUNI,Ya,Tidak,Tidak,,Tidak,Belum,Belum,Negatif,Negatif,Ya,Tidak
+10-03-2026,P,2,9,TANGKIL KULON,KEDUNGWUNI,Ya,Tidak,Tidak,,Tidak,Tidak,Belum,Negatif,Negatif,Ya,Tidak
+10-03-2026,L,2,8,TANGKIL KULON,KEDUNGWUNI,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+10-03-2026,L,8,0,PEKAJANGAN,KEDUNGWUNI,Tidak,Tidak,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+10-03-2026,P,5,2,AMBOKEMBANG,KEDUNGWUNI,Tidak,Tidak,Tidak,,Tidak,Tidak,Belum,Negatif,Negatif,Ya,Tidak
+07-03-2026,P,3,3,BOJONG,BOJONG,Tidak,Tidak,Tidak,,Tidak,Ya,Belum,Negatif,Negatif,Ya,Tidak
+09-03-2026,P,8,2,AMBOKEMBANG,AMBOKEMBANG,Tidak,Tidak,Tidak,,Ya,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+09-03-2026,P,9,3,AMBOKEMBANG,AMBOKEMBANG,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+09-03-2026,P,24,3,AMBOKEMBANG,AMBOKEMBANG,Ya,Tidak,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Ya,Tidak
+09-03-2026,P,0,8,RENGAS,RENGAS,Tidak,Tidak,Tidak,,Belum,Belum,Belum,Negatif,Negatif,Ya,Tidak
+09-03-2026,P,2,3,LEGOKCLILE,BOJONG,Tidak,Tidak,Tidak,,Tidak,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+10-03-2026,L,2,9,KEMASAN,BOJONG,Tidak,Tidak,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Ya,Tidak
+09-03-2026,L,1,1,PURWOREJO,SRAGI,Tidak,Ya,Tidak,,Ya,Belum,Belum,Negatif,Negatif,Ya,Tidak
+09-03-2026,P,6,0,SEMBUNG JAMBU,BOJONG,Ya,Ya,Tidak,,Ya,Tidak,Belum,Negatif,Negatif,Ya,Tidak
+10-03-2026,P,8,1,PACAR,TIRTO,Ya,Ya,Ya,,Tidak,Tidak,Ya,Negatif,Negatif,Tidak,Tidak
+09-03-2026,P,5,1,TANJUNG,TIRTO,Ya,Ya,Ya,,Tidak,Tidak,Belum,Negatif,Negatif,Ya,Tidak
+09-03-2026,P,10,1,KARANGANYAR,TIRTO,Ya,Ya,Ya,,Tidak,Tidak,Ya,Negatif,Negatif,Tidak,Tidak
+27-03-2026,P,1,4,GEJLIG,KAJEN,Ya,Ya,Tidak,,Ya,Tidak,Belum,Negatif,Negatif,Ya,Tidak
+27-03-2026,P,2,9,KEMASAN,BOJONG,Tidak,Tidak,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Ya,Tidak
+27-03-2026,L,4,20,KLAIRAN,KESESI,Ya,Ya,Ya,Ulkus Mukosa Mulut,Ya,Ya,Belum,Positif,Negatif,Tidak,Tidak
+27-03-2026,P,15,6,PEGANDON,KARANGDADAP,Tidak,Tidak,Tidak,Diare,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+27-03-2026,P,7,6,KEBONSARI,KARANGDADAP,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Positif,Negatif,Ya,Tidak
+27-03-2026,L,,8,CURUG,TIRTO,Ya,Ya,Ya,,Belum,Belum,Belum,Negatif,Negatif,Ya,Tidak
+27-03-2026,P,1,3,CURUG,TIRTO,Ya,Ya,Ya,,Tidak,Belum,Belum,Negatif,Negatif,Ya,Tidak
+27-03-2026,P,5,9,PANDANARUM,TIRTO,Ya,Ya,Ya,,Tidak,Tidak,Belum,Negatif,Negatif,Ya,Tidak
+27-03-2026,L,1,6,DADIREJO,TIRTO,Ya,Ya,Ya,,Tidak,Belum,Belum,Negatif,Negatif,Tidak Tahu,Tidak
+13-05-2026,L,32,6,GONDANG,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Tidak Tahu,Negatif,Negatif,Tidak Tahu,Tidak
+13-05-2026,L,34,6,GONDANG,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Tidak Tahu,Negatif,Negatif,Tidak Tahu,Tidak
+13-05-2026,L,19,4,GONDANG,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Tidak Tahu,Negatif,Negatif,Tidak Tahu,Tidak
+13-05-2026,L,71,8,GONDANG,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+13-05-2026,P,68,2,GONDANG,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+13-05-2026,L,69,8,GONDANG,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+13-05-2026,L,65,2,GONDANG,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+13-05-2026,P,43,0,GONDANG,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+13-05-2026,L,43,0,GONDANG,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+13-05-2026,P,61,,GONDANG,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+13-05-2026,P,19,0,WONOKERTO,WONOKERTO,Tidak,Tidak,Tidak,,Ya,Ya,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+13-05-2026,P,7,0,WONOKERTO,WONOKERTO,Tidak,Tidak,Tidak,,Ya,Ya,Tidak Tahu,Negatif,Negatif,Ya,Tidak
+13-05-2026,P,14,0,WONOKERTO,WONOKERTO,Tidak,Tidak,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Ya,Tidak
+13-05-2026,L,11,0,WONOKERTO,WONOKERTO,Tidak,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+13-05-2026,P,0,9,WIRODITAN,BOJONG,Tidak,Ya,Tidak,,Tidak,Tidak,Belum,Negatif,Positif,Ya,Tidak
+13-05-2026,P,0,6,KEDUNGWUNI,KEDUNGWUNI,Ya,Ya,Tidak,,Belum,Belum,Belum,Negatif,Negatif,Ya,Tidak
+13-05-2026,L,1,2,LARIKAN,DORO,Tidak,Tidak,Tidak,,Ya,Belum,Belum,Negatif,Negatif,Ya,Tidak
+13-05-2026,P,0,11,PODOSARI,KESESI,Tidak,Tidak,Tidak,,Tidak,Ya,Belum,Negatif,Negatif,Ya,Tidak
+13-05-2026,L,1,0,YOSOREJO,PETUNGKRIYONO,Ya,Ya,Belum,,Ya,Belum,Belum,Negatif,Negatif,Ya,Tidak
+13-05-2026,P,6,2,NOTOGIWANG,PANINGGARAN,Ya,Ya,Belum,,Ya,Ya,Ya,Positif,Negatif,Tidak,Tidak
+19-06-2026,P,48,0,ROWOKEMBU,WONOPRINGGO,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+19-06-2026,L,20,0,ROWOKEMBU,WONOPRINGGO,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+19-06-2026,P,54,7,ROWOKEMBU,WONOPRINGGO,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+19-06-2026,P,45,0,ROWOKEMBU,WONOPRINGGO,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+19-06-2026,P,26,2,ROWOKEMBU,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+19-06-2026,L,48,0,ROWOKEMBU,WONOPRINGGO,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+15-06-2026,L,54,0,ROWOKEMBU,WONOPRINGGO,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+19-06-2026,P,18,0,ROWOKEMBU,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+19-06-2026,P,46,0,ROWOKEMBU,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+19-06-2026,P,1,7,PEGADEN TENGAH,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Belum,Positif,Negatif,Tidak,Tidak
+19-06-2026,P,28,6,BLIGO,DORO,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+19-06-2026,P,19,0,KRASAKAGENG,SRAGI,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+19-06-2026,P,26,0,KRASAKAGENG,SRAGI,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+19-06-2026,P,25,0,KRASAKAGENG,SRAGI,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+20-06-2026,L,8,0,BABALAN LOR,BOJONG,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+20-06-2026,L,73,0,KALIJAMBE,SRAGI,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak,Negatif,Negatif,Tidak,Tidak
+20-06-2026,P,75,,GONDANG,WONOPRINGGO,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak,Negatif,Negatif,Tidak,Tidak
+20-06-2026,P,42,,GONDANG,WONOPRINGGO,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak,Negatif,Negatif,Tidak,Tidak
+20-06-2026,L,3,4,KWAYANGAN,KEDUNGWUNI,Ya,Ya,Tidak,,Ya,Ya,Ya,Positif,Negatif,Tidak,Tidak
+20-06-2026,P,4,6,KAJEN,KAJEN,Ya,Ya,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Tidak,Tidak
+20-06-2026,L,6,8,KWAYANGAN,KEDUNGWUNI,Ya,Ya,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Tidak,Tidak
+20-06-2026,P,1,8,KAJEN,KAJEN,Ya,Ya,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Tidak,Tidak
+20-06-2026,P,5,6,JETAK KIDUL,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Ya,Belum,Positif,Negatif,Tidak,Tidak
+20-06-2026,L,0,7,KARANGDADAP,KARANGDADAP,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+21-06-2026,P,26,6,DORO,DORO,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+21-06-2026,L,30,0,BULAK SARI,SRAGI,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+21-06-2026,L,26,,BULAK SARI,SRAGI,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+21-06-2026,P,0,10,PECAKARAN,WONOKERTO,Ya,Ya,Tidak,,Ya,Belum,Belum,Negatif,Negatif,Tidak,Tidak
+21-06-2026,P,13,,WONOKERTO,WONOKERTO,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+21-06-2026,P,2,0,PECAKARAN,WONOKERTO,Ya,Ya,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Tidak,Tidak
+21-06-2026,P,4,0,BEBEL,WONOKERTO,Ya,Ya,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Tidak,Tidak
+21-06-2026,L,9,0,WONOKERTO,WONOKERTO,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+21-06-2026,P,21,0,WONOKERTO,WONOKERTO,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+21-06-2026,P,19,0,WONOKERTO,WONOKERTO,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+21-06-2026,L,2,4,SUKOHARJO,KANDANGSERANG,Ya,Ya,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Tidak,Tidak
+21-06-2026,L,1,10,KEDUNGWUNI,KEDUNGWUNI,Ya,Ya,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Tidak,Tidak
+21-06-2026,L,0,7,GEJLIG,KAJEN,Ya,Ya,Tidak,,Ya,Belum,Belum,Negatif,Negatif,Tidak,Tidak
+21-06-2026,P,47,0,KARANGDADAP,KARANGDADAP,Ya,Ya,Tidak,,Ya,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+21-06-2026,L,0,6,KAJEN,KAJEN,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+21-06-2026,L,29,0,SRAGI,SRAGI,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+21-06-2026,P,28,0,SRAGI,SRAGI,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+21-06-2026,P,25,0,KETANON,SRAGI,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+21-06-2026,P,7,0,KEDUNGWUNI,KEDUNGWUNI,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+21-06-2026,L,75,0,KUTOSARI,DORO,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+21-06-2026,P,1,0,KEDUNGWUNI,KEDUNGWUNI,Ya,Ya,Tidak,,Tidak,Belum,Belum,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,51,0,RANDUSARI,DORO,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,42,,DORO,DORO,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,47,0,DELEGTUKANG,WIRADESA,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,1,0,WARU,WIRADESA,Ya,Ya,Tidak,,Ya,Tidak,Belum,Negatif,Negatif,Tidak,Tidak
+22-06-2026,L,17,0,WARU,WIRADESA,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+22-06-2026,L,9,,KAUMAN,WIRADESA,Ya,Ya,Tidak ,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+22-06-2026,L,6,0,BONDAN,WIRADESA,Ya,Ya,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,18,9,KAMPIL,WIRADESA,Ya,Ya,Ya,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,4,5,KARANGJATI,WIRADESA,Ya,Ya,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,9,9,PRINGSURAT,KAJEN,Ya,Ya,Ya,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,6,0,KRANDON,KESESI,Ya,Ya,Belum,,Ya,Ya,Belum,Negatif,Negatif,Tidak,Tidak
+02-06-2026,L,30,0,KESESI,KESESI,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-06-2026,P,26,0,JAGUNG,KESESI,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-06-2026,P,23,,BRONDONG,KESESI,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-06-2026,P,35,0,WATU PAYUNG,KESESI,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-06-2026,P,3,3,TANGKIL,KEDUNGWUNI,Ya,Ya,Tidak,,Ya,Ya,Belum,Positif,Negatif,Tidak,Tidak
+02-06-2026,P,9,0,KEDUNGWUNI,KEDUNGWUNI,Ya,Ya,Ya,,Ya,Ya,Ya,Positif,Negatif,Tidak,Tidak
+02-06-2026,L,1,2,PEKALONGAN,PEKALONGAN,Ya,Ya,Tidak,,Ya,Belum,Belum,Positif,Negatif,Tidak,Tidak
+02-06-2026,L,10,,PEKALONGAN,PEKALONGAN,Ya,Ya,Ya,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-06-2026,L,1,5,TANGKIL,KEDUNGWUNI,Ya,Ya,Belum,,Ya,Belum,Belum,Negatif,Negatif,Tidak,Tidak
+02-06-2026,L,8,3,TANGKIL,KEDUNGWUNI,Ya,Ya,Ya,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-06-2026,P,26,3,KARANGDADAP,KARANGDADAP,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-06-2026,L,8,0,KARANGDADAP,KARANGDADAP,Ya,Ya,YA,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-06-2026,L,36,0,KARANGDADAP,KARANGDADAP,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-06-2026,P,6,0,KARANGDADAP,KARANGDADAP,Ya,Ya,Belum,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-06-2026,L,24,0,LOGANDENG,KARANGDADAP,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+02-06-2026,P,2,0,PESANTREN,SRAGI,Ya,Ya,Belum,,Ya,Ya,Belum,Negatif,Negatif,Tidak,Tidak
+02-06-2026,L,1,0,KAMPIL,WIRADESA,Ya,Ya,Belum,,Ya,Tidak,Belum,Negatif,Negatif,Tidak,Tidak
+20-06-2026,P,1,,JETAK,WONOPRINGGO,Ya,Ya,Belum,,Ya,Tidak,Belum,Negatif,Negatif,Tidak,Tidak
+22-06-2026,L,0,7,GANDARUM,KAJEN,Ya,Ya,Belum,,Ya,Tidak,Belum,Negatif,Negatif,Tidak,Tidak
+22-06-2026,L,10,,GEMBONG,KEDUNGWUNI,Ya,Ya,Ya,,Ya,Tidak,Ya,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,5,10,KALIPANCUR,BOJONG,Ya,Ya,Belum,,Ya,Tidak,Belum,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,38,10,PANTIANOM,BOJONG,Ya,Ya,Tidak,,Ya,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,31,0,KRANDON,KESESI,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,38,0,KARANGSARI,KARANGANYAR,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,66,0,KARANGSARI,KARANGANYAR,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Positif,Tidak,Tidak
+22-06-2026,P,52,0,KARANGSARI,KARANGANYAR,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,55,0,KARANGSARI,KARANGANYAR,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,63,0,KARANGSARI,KARANGANYAR,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,28,0,JREBENGKEMBANG,KARANGDADAP,Ya,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,8,0,KEBONROWOPUCANG,KARANGDADAP,Ya,Ya,Ya,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,28,0,PEGANDON,KARANGDADAP,Tidak,Tidak,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak Tahu,Tidak
+22-06-2026,P,75,0,KARANGSARI,KARANGANYAR,Tidak,Tidak,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak Tahu,Tidak
+22-06-2026,P,70,0,KARANGSARI,KARANGANYAR,Tidak,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak Tahu,Tidak
+22-06-2026,P,56,0,KARANGSARI,KARANGANYAR,Tidak,Ya,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Negatif,Negatif,Tidak Tahu,Tidak
+22-06-2026,L,1,0,GALANGPENGAMPON,WONOPRINGGO,Ya,Ya,Tidak,,Ya,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+22-06-2026,L,,13,TENGENG,SIWALAN,Ya,Ya,Tidak,,Ya,Ya,Belum,Negatif,Negatif,Ya,Tidak
+22-06-2026,L,5,2,TANGKIL,KEDUNGWUNI,Tidak,Tidak,Ya,,Tidak,Tidak,Belum,Negatif,Negatif,Tidak,Tidak
+22-06-2026,L,7,4,PEKAJANGAN,KEDUNGWUNI,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+22-06-2026,P,8,12,AMBUKEMBANG,KEDUNGWUNI,Tidak,Ya,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+22-06-2026,P,4,17,TANGKIL KULON,KEDUNGWUNI,Ya,Tidak,Tidak,,Tidak,Ya,Belum,Negatif,Negatif,Ya,Tidak
+22-06-2026,P,6,0,PEKAJANGAN,KEDUNGWUNI,Tidak,Tidak,Tidak,,Tidak,Tidak,Belum,Negatif,Negatif,Ya,Tidak
+14-07-2026,P,25,,REMBUN,SIWALAN,Tidak,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+15-07-2026,P,7,15,SAMBIROTO,KAJEN,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Positif,Negatif,Tidak,Tidak
+15-07-2026,L,7,16,PEJATEN,KEDUNGWUNI,Ya,Ya,Tidak,,Ya,Tidak,Ya,Negatif,Negatif,Ya,Tidak
+16-07-2026,P,5,0,BOJONG LOR,BOJONG,Ya,Tidak,Tidak,,Tidak,Tidak,Tidak,Positif,Negatif,Tidak,Tidak
+16-07-2026,L,8,1,PODOSARI,KESESI,Ya,Ya,Ya,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+16-07-2026,L,29,1,WATUGAJAH,WATUGAJAH,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+16-07-2026,P,8,1,LANGENSARI,KESESI,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+16-07-2026,L,36,1,WATUGAJAH,KESESI,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+16-07-2026,L,4,,SIDOMULYO,LEBAK BARANG,Ya,Tidak,Tidak,,Tidak,Tidak,Tidak,Positif,Negatif,Ya,Tidak
+16-07-2026,L,5,3,WINDUAJI,PANINGGARAN,Ya,Ya,Tidak,,Ya,Ya,Ya,Positif,Negatif,Ya,Tidak
+16-07-2026,P,21,2,WINDUAJI,PANINGGARAN,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+16-07-2026,P,32,1,TALUN,TALUN,Tidak,Tidak,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+16-07-2026,P,42,4,KUTOSARI,DORO,Tidak,Tidak,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+16-07-2026,P,34,2,YOSOREJO,PETUNGKRIYONO,Tidak,Tidak,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+16-07-2026,P,50,2,KEBONROWOPUCANG,KARANGDADAP,Tidak,Tidak,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+16-07-2026,L,,,KARANGSARI,KARANGANYAR,Ya,Tidak,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+16-07-2026,L,17,,KARANGSARI,KARANGANYAR,Ya,Tidak,Tidak,,Tidak,Tidak,Tidak,Positif,Negatif,Ya,Tidak
+16-07-2026,L,,,KARANGSARI,KARANGANYAR,Ya,Tidak,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+16-07-2026,L,,,KARANGSARI,KARANGANYAR,Ya,Tidak,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+23-07-2026,L,,,LINGGO ASRI,KAJEN,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Positif,Negatif,Tidak,Tidak
+23-07-2026,P,,,KAJONGAN,KAJEN,Ya,Tidak,Tidak,,Tidak,Tidak,Tidak,Positif,Negatif,Tidak Tahu,Tidak
+20-07-2026,P,6,,KAJEN,KAJEN,Ya,Tidak,Tidak,,Ya,Tidak,Tidak,Positif,Negatif,Tidak,Tidak
+23-07-2026,P,16,,KEBONAGUNG,KAJEN,Ya,Ya,Ya,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Positif,Negatif,Tidak,Ya
+23-07-2026,P,5,,JREBENGKEMBANG,KARANGDADAP,Ya,Tidak,Tidak,,Tidak Tahu,Tidak Tahu,Tidak Tahu,Positif,Negatif,Tidak Tahu,Tidak
+23-07-2026,P,9,,DOROREJO,DORO,Tidak,Tidak,Tidak,,Ya,Tidak,Tidak,Negatif,Negatif,Tidak Tahu,Tidak
+23-07-2026,P,,,PURWOREJO,SRAGI,Ya,Tidak,Tidak,,Ya,Ya,Tidak,Positif,Negatif,Tidak Tahu,Tidak
+23-07-2026,L,4,2,TIRTO,TIRTO,Ya,Ya,Tidak,,Ya,Tidak,Ya,Negatif,Negatif,Ya,Tidak
+02-08-2026,P,11,6,TANJUNGSARI,KAJEN,Ya,Ya,Tidak,,Ya,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+25-05-2026,L,,,KEBONAGUNG,KAJEN,Ya,Ya,Tidak,,Ya,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+08-05-2026,L,7,,DUSUN SIMBANG,KESESI,Ya,Ya,Ya,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+30-07-2026,L,3,4,PEKUNCEN,WIRADESA,Ya,Ya,Tidak,BRONCHOPNEUMONIA,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+30-07-2026,L,9,10,KEDUNGWUNI TIMUR,KEDUNGWUNI,Ya,Ya,Ya,BRONCHOPNEUMONIA,Ya,Ya,Ya,Positif,Negatif,Ya,Tidak
+05-08-2026,P,2,,JAGUNG,KESESI,Ya,Tidak,Ya,,Ya,Ya,Belum,Negatif,Negatif,Ya,Tidak
+05-08-2026,L,12,,BOJONG,BOJONG,Ya,Tidak,Ya,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+05-08-2026,P,2,,KURIPAN,PEKALONGAN,Ya,Tidak,Ya,,Ya,Ya,Tidak,Negatif,Positif,Ya,Tidak
+05-08-2026,L,11,,KAJEN,KAJEN,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Positif,Negatif,Tidak,Tidak
+05-08-2026,P,6,16,PEKALONGAN,PEKALONGAN,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Positif,Negatif,Ya,Tidak
+05-08-2026,P,3,,WONOSIDO,PEKALONGAN,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Positif,Negatif,Ya,Tidak
+05-08-2026,L,3,,SAMBIROTO,KAJEN,Ya,Ya,Tidak,,Ya,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+05-08-2026,P,7,,PANINGGARAN,PANINGGRAN,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+05-08-2026,L,7,,WANGANDOWO,BOJONG,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+05-08-2026,P,9,0,PEKAJANGAN,KEDUNGWUNI,Tidak,Tidak,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+05-08-2026,L,9,,KALILEMBU,KARANGDADAP,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+05-08-2026,L,2,,SARINAHAN,KESESI,Tidak,Tidak,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+05-08-2026,L,4,,KEDUNGWUNI,KEDUNGWUNI,Tidak,Tidak,Tidak,,Ya,Ya,Tidak,Positif,Negatif,Ya,Tidak
+05-08-2026,P,11,,SIMBANG KULON,BUARAN,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+05-08-2026,P,15,,WONOYOSO,BUARAN,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+05-08-2026,L,35,,SAPUGARUT,BUARAN,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+05-08-2026,P,10,,WONOYOSO,BUARAN,Ya,Ya,Ya,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+05-08-2026,L,55,,COPRAYAN,BUARAN,Ya,Ya,Ya,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+05-08-2026,L,18,,SIMBANG KULON,BUARAN,Ya,Ya,Ya,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+05-08-2026,P,16,,SAPUGARUT,BUARAN,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+28-08-2026,P,6,5,SRINAHAN,KESESI,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+31-08-2026,P,1,,KEBONAGUNG,KAJEN,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+28-08-2026,P,0,11,PODO,KEDUNGWUNI,Ya,Ya,Tidak,,Ya,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+31-08-2026,P,2,9,PODO,KEDUNGWUNI,Ya,Ya,Tidak,,Ya,Ya,Tidak,Positif,Negatif,Ya,Tidak
+31-08-2026,P,4,7,BOJONG LOR,BOJONG,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+31-08-2026,P,5,11,BOJONGMINGGIR,BOJONG,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+31-08-2026,L,3,9,BOJONG,BOJONG,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+31-08-2026,P,7,9,BOJONG,BOJONG,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Tidak,Tidak
+31-08-2026,L,6,,PEGADEN TENGAH,KEDUNGWUNI,Ya,Ya,Tidak,,Ya,Tidak,Tidak,Negatif,Negatif,Tidak,Tidak
+31-08-2026,P,8,,JEGLIG,KAJEN,Ya,Ya,Tidak,,Ya,Tidak,Tidak,Positif,Negatif,Tidak,Tidak
+31-08-2026,P,2,,TEGAL SURUH,SRAGI,Ya,Ya,Tidak,,Ya,Ya,Tidak,Positif,Negatif,Tidak,Tidak
+10-09-2026,L,2,1,WINDUROJO,KESESI,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Tidak,Tidak
+10-09-2026,L,6,1,KWASEN,KESESI,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+10-09-2026,L,11,,PODOSARI,KESESI,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+10-09-2026,L,8,,KARYOMUKTI,KESESI,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+10-09-2026,L,72,,PODOSARI,KESESI,Ya,Ya,Tidak,,Ya,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+10-09-2026,L,40,,PODOSARI,KESESI,Ya,Ya,Tidak,,Tidak,Tidak,Tidak,Negatif,Negatif,Ya,Tidak
+10-09-2026,L,8,,KROMPENG,TALUN,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+11-09-2026,L,14,11,PANINGGARAN,PANINGGARAN,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+11-09-2026,L,7,2,LAMBANGGELUN,PANINGGARAN,Ya,Ya,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+11-09-2026,L,14,2,PANINGGARAN,PANINGGARAN,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+11-09-2026,P,7,2,PANINGGARAN,PANINGGARAN,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+11-09-2026,P,7,2,PANINGGARAN,PANINGGARAN,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+11-09-2026,L,12,2,PANINGGARAN,PANINGGARAN,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+11-09-2026,L,12,7,PANINGGARAN,PANINGGARAN,Tidak,Tidak,Tidak,,Ya,Ya,Ya,Negatif,Negatif,Ya,Tidak
+11-09-2026,L,4,10,PAMUTUH,LEBAKBARANG,Ya,Ya,Ya,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+11-09-2026,P,6,10,PAMUTUH,LEBAKBARANG,Ya,Ya,Tidak,,Ya,Ya,Tidak,Negatif,Negatif,Ya,Tidak
+11-09-2026,L,5,6,AMBOKEMBANG,KEDUNGWUNI,Tidak,Ya,Ya,,Tidak,Ya,Tidak,Negatif,Negatif,Ya,Tidak

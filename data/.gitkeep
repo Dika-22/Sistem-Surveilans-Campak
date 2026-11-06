@@ -1,0 +1,3 @@
+# Folder ini disiapkan untuk file GeoJSON batas kecamatan.
+# Letakkan file .geojson di sini untuk menampilkan peta choropleth.
+# Lihat komentar di js/app.js bagian renderMap() untuk petunjuk penggunaan.

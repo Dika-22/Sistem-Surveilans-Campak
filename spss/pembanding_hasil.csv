@@ -1,0 +1,6 @@
+uji,n,df,chi_square,p_value,dashboard_p
+status_imunisasi x status_kasus,272,3,6.685,0.0826,0.0826
+jenis_kelamin x status_kasus,272,1,0.24,0.6245,0.6245
+mcv1 x status_kasus,272,3,4.413,0.2202,0.2202
+kelompok_umur x status_kasus,265,5,13.704,0.0176,0.0176
+gejala_mata_merah x status_kasus,272,2,0.152,0.9268,0.9268

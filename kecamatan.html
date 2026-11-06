@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B6FB8">
+  <meta name="description" content="Detail Kasus Surveilans Campak per Kecamatan — Kabupaten Pekalongan">
+  <title>Detail Kecamatan — Sistem Surveilans Campak Kab. Pekalongan</title>
+
+  <!-- Google Fonts: Public Sans -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&display=swap">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-detail">
+
+  <!-- ===================== HEADER IDENTITAS ===================== -->
+  <header class="identity-header">
+    <div class="identity-inner">
+      <div class="identity-logos">
+        <div class="logo-box">
+          <img src="assets/logo/unikal.png" alt="Logo Unikal" onerror="this.onerror=null;this.parentElement.innerHTML='<span class=\'logo-placeholder\'>Logo Unikal</span>';">
+        </div>
+        <div class="logo-box">
+          <img src="assets/logo/fakultas.png" alt="Logo Fakultas" onerror="this.onerror=null;this.parentElement.innerHTML='<span class=\'logo-placeholder\'>Logo Fakultas</span>';">
+        </div>
+        <div class="logo-box">
+          <img src="assets/logo/dinas.png" alt="Logo Dinas" onerror="this.onerror=null;this.parentElement.innerHTML='<span class=\'logo-placeholder\'>Logo Dinas</span>';">
+        </div>
+      </div>
+      <div class="identity-text">
+        <h2 id="instansi-univ" class="id-univ">Universitas Pekalongan</h2>
+        <p class="id-sub"><span id="instansi-fakultas">Fakultas Ilmu Kesehatan</span> &bull; <span id="instansi-prodi">Program Studi Kesehatan Masyarakat</span></p>
+        <p class="id-mhs">Mahasiswa: <strong id="instansi-mhs">[Nama Mahasiswa]</strong> <span id="instansi-nim"></span> | Dosen Pembimbing: <strong id="instansi-dosen">[Dosen Pembimbing]</strong></p>
+        <p class="id-dinas">Mitra / Wilayah Kerja: <strong id="instansi-dinas">[Dinas Kesehatan Kab. Pekalongan]</strong></p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== NAVIGASI KEMBALI ===================== -->
+  <nav class="nav-wrapper nav-detail" aria-label="Navigasi Detail">
+    <div class="nav-inner" style="justify-content:space-between;">
+      <a href="index.html" class="btn btn-outline btn-sm">← Kembali ke Dashboard Utama</a>
+      <div class="nav-brand">📍 Detail Wilayah: <span id="detail-nav-title">Kecamatan</span></div>
+      <div id="data-status-bar" class="status-wrapper-mini"></div>
+    </div>
+  </nav>
+
+  <main class="section detail-container" id="main-content">
+    <!-- State jika parameter tidak valid -->
+    <div id="not-found-state" class="empty-state-box" style="display:none;">
+      <div class="empty-icon">⚠️</div>
+      <h2>Kecamatan Tidak Ditemukan</h2>
+      <p>Parameter nama kecamatan pada tautan tidak valid atau belum memiliki catatan kasus dalam sistem surveilans.</p>
+      <a href="index.html" class="btn btn-primary mt-2">← Kembali ke Halaman Utama</a>
+    </div>
+
+    <!-- Konten Utama Detail -->
+    <div id="detail-content">
+      <!-- Judul & Aksi Ekspor -->
+      <div class="detail-header-card fade-in visible">
+        <div class="detail-header-text">
+          <span class="sample-badge">Profil Epidemiologi Wilayah</span>
+          <h1 id="nama-kecamatan-title">Kecamatan ...</h1>
+          <p id="sub-kecamatan-desc">Pemantauan kasus campak tingkat kecamatan periode 2026.</p>
+        </div>
+        <div class="detail-export-actions">
+          <button id="btn-export-kec-csv" class="btn btn-outline btn-sm">📥 Unduh CSV</button>
+          <button id="btn-export-kec-excel" class="btn btn-primary btn-sm">📊 Unduh Excel (.xlsx)</button>
+        </div>
+      </div>
+
+      <!-- Kartu Ringkasan Kecamatan -->
+      <div class="summary-cards fade-in visible mt-2">
+        <div class="summary-card">
+          <div class="card-icon">📋</div>
+          <div class="card-value" id="kec-total-kasus">–</div>
+          <div class="card-label">Total Kasus</div>
+        </div>
+        <div class="summary-card">
+          <div class="card-icon">✅</div>
+          <div class="card-value" id="kec-total-confirmed">–</div>
+          <div class="card-label">Kasus Confirmed</div>
+        </div>
+        <div class="summary-card">
+          <div class="card-icon">🏡</div>
+          <div class="card-value" id="kec-total-desa">–</div>
+          <div class="card-label">Desa Terdampak</div>
+        </div>
+        <div class="summary-card">
+          <div class="card-icon">💉</div>
+          <div class="card-value" id="kec-pct-belum-imun">–</div>
+          <div class="card-label">Belum Lengkap Imunisasi</div>
+        </div>
+      </div>
+
+      <!-- Grafik Grid Kecamatan -->
+      <div class="chart-grid mt-3">
+        <!-- Tren Bulanan -->
+        <div class="chart-card chart-card-full">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">📅 Tren Kasus per Bulan di Kecamatan Ini</div>
+            <button class="btn-download-chart" data-canvas="chart-kec-bulan" title="Unduh Gambar PNG">📷 Unduh PNG</button>
+          </div>
+          <div class="chart-container" style="min-height:280px;">
+            <canvas id="chart-kec-bulan"></canvas>
+          </div>
+        </div>
+
+        <!-- Kelompok Umur -->
+        <div class="chart-card">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">👶 Kasus per Kelompok Umur</div>
+            <button class="btn-download-chart" data-canvas="chart-kec-umur" title="Unduh Gambar PNG">📷 Unduh PNG</button>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-kec-umur"></canvas>
+          </div>
+        </div>
+
+        <!-- Status Imunisasi -->
+        <div class="chart-card">
+          <div class="chart-card-header-flex">
+            <div class="chart-card-title">💉 Kasus per Status Imunisasi</div>
+            <button class="btn-download-chart" data-canvas="chart-kec-imun" title="Unduh Gambar PNG">📷 Unduh PNG</button>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-kec-imun"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabel Daftar Desa Terdampak -->
+      <div class="chart-card mt-3">
+        <div class="chart-card-header-flex">
+          <div class="chart-card-title">🏘️ Daftar Desa / Kelurahan Terdampak di Kecamatan Ini</div>
+          <div class="checkbox-small-wrapper">
+            <label class="custom-checkbox-label">
+              <input type="checkbox" id="check-mask-desa">
+              <span>Sembunyikan jumlah kecil (&lt;5) untuk privasi</span>
+            </label>
+          </div>
+        </div>
+        <div class="table-wrapper mt-1">
+          <table class="data-table" aria-label="Tabel desa terdampak di kecamatan">
+            <thead>
+              <tr>
+                <th style="width:60px;">No</th>
+                <th>Desa / Kelurahan</th>
+                <th>Jumlah Kasus</th>
+                <th>Persentase di Kecamatan</th>
+                <th>Kasus Confirmed</th>
+              </tr>
+            </thead>
+            <tbody id="tabel-desa-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tombol Kembali Bawah -->
+      <div class="text-center mt-3 mb-3">
+        <a href="index.html#peta" class="btn btn-outline">🗺️ Kembali ke Peta Kasus</a>
+        <a href="index.html" class="btn btn-primary">📊 Kembali ke Dashboard Utama</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-identity-summary" id="footer-identity-summary"></div>
+    <p class="mt-1">
+      <strong>Sistem Surveilans Kasus Campak — Kabupaten Pekalongan</strong><br>
+      Periode 2026 &bull; Data terlindungi sesuai prinsip privasi epidemiologi (tanpa nama & alamat individu).
+    </p>
+  </footer>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <!-- PapaParse CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <!-- SheetJS CDN (XLSX) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
+  <!-- Konfigurasi & Data -->
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/data-loader.js"></script>
+
+  <!-- Script Logika Detail Kecamatan -->
+  <script>
+    (function () {
+      let kecNama = '';
+      let kecData = [];
+      let chartInstances = {};
+      let maskSmallNumbers = false;
+
+      // Ambil nama dari URL query ?nama=
+      const urlParams = new URLSearchParams(window.location.search);
+      kecNama = urlParams.get('nama');
+
+      document.addEventListener('DOMContentLoaded', async () => {
+        isiIdentitas();
+        initMaskCheckbox();
+        initChartDownloadButtons();
+
+        // Muat data dari data-loader.js
+        await DataLoader.init();
+        renderHalaman();
+
+        // Reaktif jika polling data diperbarui
+        DataLoader.onUpdate(() => {
+          renderHalaman();
+        });
+      });
+
+      function isiIdentitas() {
+        if (!CONFIG || !CONFIG.identitas) return;
+        const id = CONFIG.identitas;
+        document.getElementById('instansi-univ').textContent = id.universitas || 'Universitas Pekalongan';
+        document.getElementById('instansi-fakultas').textContent = id.fakultas || 'Fakultas Ilmu Kesehatan';
+        document.getElementById('instansi-prodi').textContent = id.prodi || 'Program Studi Kesehatan Masyarakat';
+        document.getElementById('instansi-mhs').textContent = id.namaMahasiswa || '[Isi Nama Mahasiswa]';
+        document.getElementById('instansi-nim').textContent = id.nim ? `(${id.nim})` : '';
+        document.getElementById('instansi-dosen').textContent = id.dosenPembimbing || '[Dosen Pembimbing]';
+        document.getElementById('instansi-dinas').textContent = id.dinas || 'Dinas Kesehatan Kab. Pekalongan';
+
+        const foot = document.getElementById('footer-identity-summary');
+        if (foot) {
+          foot.innerHTML = `
+            <span>${id.universitas} &bull; ${id.fakultas} &bull; ${id.prodi}</span><br>
+            <span>Penyusun: <strong>${id.namaMahasiswa}</strong> | Pembimbing: <strong>${id.dosenPembimbing}</strong></span>
+          `;
+        }
+      }
+
+      function renderHalaman() {
+        const allData = DataLoader.getData();
+
+        if (!kecNama || !allData || allData.length === 0) {
+          tampilkanNotFound();
+          return;
+        }
+
+        // Filter data untuk kecamatan ini (case-insensitive)
+        kecData = allData.filter(d => String(d.kecamatan).toLowerCase() === kecNama.toLowerCase());
+
+        if (kecData.length === 0) {
+          tampilkanNotFound();
+          return;
+        }
+
+        // Tampilkan konten
+        document.getElementById('not-found-state').style.display = 'none';
+        document.getElementById('detail-content').style.display = 'block';
+
+        const officialName = kecData[0].kecamatan;
+        document.title = `Kecamatan ${officialName} — Sistem Surveilans Campak`;
+        document.getElementById('detail-nav-title').textContent = officialName;
+        document.getElementById('nama-kecamatan-title').textContent = `Kecamatan ${officialName}`;
+        document.getElementById('sub-kecamatan-desc').textContent =
+          `Distribusi epidemiologis kasus campak di wilayah Kecamatan ${officialName}.`;
+
+        renderCards();
+        renderCharts();
+        renderTableDesa();
+        setupExportButtons(officialName);
+      }
+
+      function tampilkanNotFound() {
+        document.getElementById('not-found-state').style.display = 'block';
+        document.getElementById('detail-content').style.display = 'none';
+      }
+
+      function renderCards() {
+        const total = kecData.length;
+        const confirmed = kecData.filter(d => d.status_kasus === 'Confirmed').length;
+        const desaSet = new Set(kecData.map(d => d.desa).filter(Boolean));
+        const belumImun = kecData.filter(d => d.status_imunisasi === 'Belum' || d.status_imunisasi === 'Tidak Lengkap').length;
+        const pctImun = total > 0 ? ((belumImun / total) * 100).toFixed(1) : 0;
+
+        document.getElementById('kec-total-kasus').textContent = total;
+        document.getElementById('kec-total-confirmed').textContent = confirmed;
+        document.getElementById('kec-total-desa').textContent = desaSet.size;
+        document.getElementById('kec-pct-belum-imun').textContent = `${pctImun}% (${belumImun})`;
+      }
+
+      function renderCharts() {
+        // 1. Bulanan
+        const bulanan = {};
+        kecData.forEach(d => {
+          if (!d.tanggal_onset) return;
+          const key = d.tanggal_onset.substring(0, 7);
+          bulanan[key] = (bulanan[key] || 0) + 1;
+        });
+        const sortedKeys = Object.keys(bulanan).sort();
+        const namaBulan = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+        const labelsBulan = sortedKeys.map(k => {
+          const [y, m] = k.split('-');
+          return `${namaBulan[parseInt(m) - 1]} ${y}`;
+        });
+
+        buatChart('chart-kec-bulan', 'line', {
+          labels: labelsBulan,
+          datasets: [{
+            label: 'Jumlah Kasus',
+            data: sortedKeys.map(k => bulanan[k]),
+            borderColor: '#0B6FB8',
+            backgroundColor: 'rgba(11,111,184,0.12)',
+            fill: true,
+            tension: 0.3,
+            pointBackgroundColor: '#0A3A66',
+            pointRadius: 4
+          }]
+        });
+
+        // 2. Umur fleksibel dari CONFIG
+        const kelompokUmur = (CONFIG && CONFIG.kelompokUmur) || [
+          { label: '<1 thn', min: 0, max: 0 },
+          { label: '1–4 thn', min: 1, max: 4 },
+          { label: '5–9 thn', min: 5, max: 9 },
+          { label: '10–14 thn', min: 10, max: 14 },
+          { label: '15–19 thn', min: 15, max: 19 },
+          { label: '20+ thn', min: 20, max: 150 }
+        ];
+
+        const countUmur = {};
+        kelompokUmur.forEach(g => { countUmur[g.label] = 0; });
+        kecData.forEach(d => {
+          const u = d.umur;
+          const match = kelompokUmur.find(g => u >= g.min && u <= g.max);
+          if (match) countUmur[match.label]++;
+        });
+
+        buatChart('chart-kec-umur', 'bar', {
+          labels: Object.keys(countUmur),
+          datasets: [{
+            label: 'Kasus',
+            data: Object.values(countUmur),
+            backgroundColor: '#0B6FB8',
+            borderRadius: 6
+          }]
+        });
+
+        // 3. Status Imunisasi
+        const imunCounts = {};
+        kecData.forEach(d => {
+          const s = d.status_imunisasi || 'Tidak Diketahui';
+          imunCounts[s] = (imunCounts[s] || 0) + 1;
+        });
+
+        buatChart('chart-kec-imun', 'doughnut', {
+          labels: Object.keys(imunCounts),
+          datasets: [{
+            data: Object.values(imunCounts),
+            backgroundColor: ['#0A3A66', '#0B6FB8', '#6DB9E8', '#C5DFF5']
+          }]
+        });
+      }
+
+      function renderTableDesa() {
+        const perDesa = {};
+        const confDesa = {};
+        kecData.forEach(d => {
+          const ds = d.desa || 'Tidak Diketahui';
+          perDesa[ds] = (perDesa[ds] || 0) + 1;
+          if (d.status_kasus === 'Confirmed') {
+            confDesa[ds] = (confDesa[ds] || 0) + 1;
+          }
+        });
+
+        const sorted = Object.entries(perDesa).sort((a, b) => b[1] - a[1]);
+        const tbody = document.getElementById('tabel-desa-body');
+        tbody.innerHTML = '';
+
+        sorted.forEach(([desa, jml], idx) => {
+          const confirmed = confDesa[desa] || 0;
+          const pct = ((jml / kecData.length) * 100).toFixed(1);
+          const displayJml = maskSmallNumbers && jml < 5 ? '<5' : jml;
+          const displayConf = maskSmallNumbers && confirmed < 5 && confirmed > 0 ? '<5' : confirmed;
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${idx + 1}</td>
+            <td><strong>${desa}</strong></td>
+            <td>${displayJml}</td>
+            <td>${pct}%</td>
+            <td>${displayConf}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      function buatChart(id, type, data, options = {}) {
+        const canvas = document.getElementById(id);
+        if (!canvas) return;
+        if (chartInstances[id]) chartInstances[id].destroy();
+
+        const defaultOpts = {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: type === 'doughnut' || type === 'pie' }
+          }
+        };
+
+        chartInstances[id] = new Chart(canvas, {
+          type,
+          data,
+          options: Object.assign({}, defaultOpts, options)
+        });
+      }
+
+      function initMaskCheckbox() {
+        const cb = document.getElementById('check-mask-desa');
+        if (cb) {
+          cb.addEventListener('change', () => {
+            maskSmallNumbers = cb.checked;
+            renderTableDesa();
+          });
+        }
+      }
+
+      function initChartDownloadButtons() {
+        document.querySelectorAll('.btn-download-chart').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const canvasId = btn.dataset.canvas;
+            const chart = chartInstances[canvasId];
+            if (chart) {
+              const url = chart.toBase64Image();
+              const a = document.createElement('a');
+              const tgl = new Date().toISOString().split('T')[0];
+              a.href = url;
+              a.download = `grafik_${canvasId}_${kecNama}_${tgl}.png`;
+              a.click();
+            }
+          });
+        });
+      }
+
+      function setupExportButtons(namaKec) {
+        const tgl = new Date().toISOString().split('T')[0];
+
+        // Export CSV
+        const btnCsv = document.getElementById('btn-export-kec-csv');
+        if (btnCsv) {
+          btnCsv.onclick = () => {
+            const whitelist = (CONFIG && CONFIG.WHITELIST_KOLOM) || [];
+            // Pastikan HANYA whitelist kolom yang diekspor
+            const exportRows = kecData.map(row => {
+              const obj = {};
+              whitelist.forEach(k => {
+                let v = row[k] !== undefined ? row[k] : '';
+                if (maskSmallNumbers && k === 'umur' && v < 5) v = '<5';
+                obj[k] = v;
+              });
+              return obj;
+            });
+
+            if (typeof Papa !== 'undefined') {
+              const csv = Papa.unparse(exportRows);
+              const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+              const link = document.createElement('a');
+              link.href = URL.createObjectURL(blob);
+              link.download = `campak_${namaKec.toLowerCase()}_${tgl}.csv`;
+              link.click();
+            }
+          };
+        }
+
+        // Export Excel XLSX
+        const btnExcel = document.getElementById('btn-export-kec-excel');
+        if (btnExcel) {
+          btnExcel.onclick = () => {
+            const whitelist = (CONFIG && CONFIG.WHITELIST_KOLOM) || [];
+            const exportRows = kecData.map(row => {
+              const obj = {};
+              whitelist.forEach(k => {
+                let v = row[k] !== undefined ? row[k] : '';
+                if (maskSmallNumbers && k === 'umur' && v < 5) v = '<5';
+                obj[k] = v;
+              });
+              return obj;
+            });
+
+            if (typeof XLSX !== 'undefined') {
+              const ws = XLSX.utils.json_to_sheet(exportRows);
+              const wb = XLSX.utils.book_new();
+              XLSX.utils.book_append_sheet(wb, ws, `Kasus ${namaKec.substring(0, 25)}`);
+              XLSX.writeFile(wb, `campak_${namaKec.toLowerCase()}_${tgl}.xlsx`);
+            }
+          };
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
